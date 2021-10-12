@@ -1,21 +1,21 @@
 <!doctype html>
-<html lang="es">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="img/favicon.png" type="image/png">
+	<link rel="icon" href="{{asset('img/favicon.png')}}" type="image/png">
 	<title>LMDev Portfolio</title>
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="vendors/linericon/style.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+	<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+	<link rel="stylesheet" href="{{asset('vendors/linericon/style.css')}}">
+	<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+	<link rel="stylesheet" href="{{asset('vendors/owl-carousel/owl.carousel.min.css')}}">
+	<link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
+	<link rel="stylesheet" href="{{asset('vendors/nice-select/css/nice-select.css')}}">
 	<!-- main css -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
+					<a class="navbar-brand logo_h" href="{{url('/')}}"><img src="{{asset('img/logo-lmdev.png')}}" alt=""></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="icon-bar"></span>
@@ -38,16 +38,17 @@
 						<ul class="nav navbar-nav menu_nav justify-content-end">
 							<li class="nav-item active"><a class="nav-link" href="index.html">Inicio</a></li>
 							<li class="nav-item"><a class="nav-link" href="about.html">Acerca</a></li>
-							<li class="nav-item"><a class="nav-link" href="services.html">Servicios</a></li>
+							{{-- <li class="nav-item"><a class="nav-link" href="services.html">Servicios</a></li> --}}
 							<li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-							<li class="nav-item submenu dropdown">
+							
+							{{-- <li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Páginas</a>
 								<ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
 									<li class="nav-item"><a class="nav-link" href="portfolio-details.html">Portfolio Details</a></li>
 								</ul>
-							</li>
+							</li> --}}
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Blog</a>
@@ -76,14 +77,13 @@
 							<h1 class="text-uppercase">Soy Luis Manuel</h1>
 							<h5 class="text-uppercase">Full Stack Developer</h5>
 							<div class="d-flex align-items-center">
-								{{-- <a class="primary_btn tr-bg" href="#"><span>Hire Me</span></a> --}}
-								<a class="primary_btn " href="#"><span>Dercargar CV</span></a>
+								<a class="primary_btn" href="{{url('files/CV-LMDev.pdf')}}" target="_blank"><span>Descargar CV</span></a>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-5">
 						<div class="home_right_img">
-							<img class="" src="img/banner/home-right.png" alt="">
+							<img class="" src="img/banner/home-right-lmdev.png" alt="">
 						</div>
 					</div>
 				</div>
@@ -104,19 +104,16 @@
 
 				<div class="offset-lg-1 col-lg-5">
 					<div class="main_title text-left">
-						<h2>let’s <br>
-							Introduce about <br>
-							myself</h2>
+						<h2>Te platico<br>
+							un poco <br>
+							de mí</h2>
 						<p>
-							Whose given. Were gathered. There first subdue greater. Bearing you Whales heaven 
-							midst their. Beast creepeth. Fish days.
+							Soy un desarrollador Full Stack Developer, tengo aproximadamente 10 años desarrollando, me enfocado principalmente al desarrollo web. Soy egresado de la <a href="https://www.unach.mx/">Universidad Autónoma de Chiapas</a> generación 2000-2005. 
 						</p>
 						<p>
-							Is give may shall likeness made yielding spirit a itself together created after sea 
-							is in beast beginning signs open god you're gathering whose gathered cattle let. 
-							Creature whales fruit unto meat the life beginning all in under give two.
+							Me agrada mucho lo que hago y me gusta demostrarlo echándole todas las ganas en cada proyecto que tengo a cargo.
 						</p>
-						<a class="primary_btn" href="#"><span>Download CV</span></a>
+						<a class="primary_btn" href="{{url('files/CV-LMDev.pdf')}}" target="_blank"><span>Descargar CV</span></a>
 					</div>
 				</div>
 			</div>
@@ -133,63 +130,81 @@
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="single-brand-item d-table">
 								<div class="d-table-cell text-center">
-									<img src="img/brands/logo1.png" alt="">
+									<a href="https://www.php.net/" target="_blank">
+										<img src="img/brands/php.png" alt="">
+									</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="single-brand-item d-table">
 								<div class="d-table-cell text-center">
-									<img src="img/brands/logo2.png" alt="">
+									<a href="https://html.spec.whatwg.org/" target="_blank">
+										<img src="img/brands/html5.png" alt="">
+									</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="single-brand-item d-table">
 								<div class="d-table-cell text-center">
-									<img src="img/brands/logo3.png" alt="">
+									<a href="https://laravel.com/" target="_blank">
+										<img src="img/brands/laravel.png" alt="">
+									</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="single-brand-item d-table">
 								<div class="d-table-cell text-center">
-									<img src="img/brands/logo4.png" alt="">
+									<a href="https://vuejs.org/" target="_blank">
+										<img src="img/brands/vuejs.png" alt="">
+									</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="single-brand-item d-table">
 								<div class="d-table-cell text-center">
-									<img src="img/brands/logo5.png" alt="">
+									<a href="https://jquery.com/" target="_blank">
+										<img src="img/brands/jquery.png" alt="">
+									</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="single-brand-item d-table">
 								<div class="d-table-cell text-center">
-									<img src="img/brands/logo6.png" alt="">
+									<a href="https://getbootstrap.com/" target="_blank">
+										<img src="img/brands/bootstrap.png" alt="">
+									</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="single-brand-item d-table">
 								<div class="d-table-cell text-center">
-									<img src="img/brands/logo7.png" alt="">
+									<a href="https://httpd.apache.org/" target="_blank">
+										<img src="img/brands/apache.png" alt="">
+									</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="single-brand-item d-table">
 								<div class="d-table-cell text-center">
-									<img src="img/brands/logo8.png" alt="">
+									<a href="https://code.visualstudio.com/" target="_blank">
+										<img src="img/brands/visualcode.png" alt="">
+									</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="single-brand-item d-table">
 								<div class="d-table-cell text-center">
-									<img src="img/brands/logo9.png" alt="">
+									<a href="https://www.mysql.com/" target="_blank">
+										<img src="img/brands/mysql.png" alt="">
+									</a>
 								</div>
 							</div>
 						</div>
@@ -199,15 +214,15 @@
 					<div class="client-info">
 						<div class="d-flex mb-50">
 							<span class="lage">10</span>
-							<span class="smll">Years Experience Working</span>
+							<span class="smll">Años de experiencia trabajando</span>
 						</div>
 						<div class="call-now d-flex">
 							<div>
 								<span class="fa fa-phone"></span>
 							</div>
 							<div class="ml-15">
-								<p>call us now</p>
-								<h3>(+1)-800-555-6789</h3>
+								<p>Marcame</p>
+								<h3><a href="tel:+529611243648">(+52)-9611243648</a></h3>
 							</div>
 						</div>
 					</div>
@@ -271,15 +286,15 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="main_title text-left">
-						<h2>quality work <br>
-							Recently done project </h2>
+						<h2>Proyectos realizados <br>
+							recientemente </h2>
 					</div>
 				</div>
 			</div>
 			<div class="filters portfolio-filter">
 				<ul>
-					<li class="active" data-filter="*">all</li>
-					<li data-filter=".popular">popular</li>
+					<li class="active" data-filter="*">Todos</li>
+					<li data-filter=".wordpress">WordPress</li>
 					<li data-filter=".latest"> latest</li>
 					<li data-filter=".following">following</li>
 					<li data-filter=".upcoming">upcoming</li>
@@ -288,54 +303,54 @@
 	
 			<div class="filters-content">
 				<div class="row portfolio-grid justify-content-center">
-					<div class="col-lg-4 col-md-6 all latest">
+					<div class="col-lg-4 col-md-6 all wordpress">
 						<div class="portfolio_box">
 							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p1.jpg" alt="">
+								<img class="img-fluid w-100" src="img/portfolio/agencia.jpg" alt="">
 								<div class="overlay"></div>
-								<a href="img/portfolio/p1.jpg" class="img-gal">
+								<a href="img/portfolio/agencia.jpg" class="img-gal">
 									<div class="icon">
 										<span class="lnr lnr-cross"></span>
 									</div>
 								</a>
 							</div>
 							<div class="short_info">
-								<h4><a href="portfolio-details.html">minimal design</a></h4>
-								<p>Animated, portfolio</p>
+								<h4><a href="https://agenciaelestado.mx/" target="_blank">Agencia multimedios</a></h4>
+								<p>Noticias, Chiapas, portafolio</p>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 all popular">
+					<div class="col-lg-4 col-md-6 all wordpress">
 						<div class="portfolio_box">
 							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p2.jpg" alt="">
+								<img class="img-fluid w-100" src="img/portfolio/angel.jpg" alt="">
 								<div class="overlay"></div>
-								<a href="img/portfolio/p2.jpg" class="img-gal">
+								<a href="img/portfolio/angel.jpg" class="img-gal">
 									<div class="icon">
 										<span class="lnr lnr-cross"></span>
 									</div>
 								</a>
 							</div>
 							<div class="short_info">
-								<h4><a href="portfolio-details.html">Paint wall</a></h4>
-								<p>Animated, portfolio</p>
+								<h4><a href="https://angelcondiabluras.com.mx/" target="_blank">Ángel con diabluras</a></h4>
+								<p>Noticias, Chiapas, portafolio</p>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 all latest">
+					<div class="col-lg-4 col-md-6 all wordpress">
 						<div class="portfolio_box">
 							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p3.jpg" alt="">
+								<img class="img-fluid w-100" src="img/portfolio/dystopia.jpg" alt="">
 								<div class="overlay"></div>
-								<a href="img/portfolio/p3.jpg" class="img-gal">
+								<a href="img/portfolio/dystopia.jpg" class="img-gal">
 									<div class="icon">
 										<span class="lnr lnr-cross"></span>
 									</div>
 								</a>
 							</div>
 							<div class="short_info">
-								<h4><a href="portfolio-details.html">female light</a></h4>
-								<p>Animated, portfolio</p>
+								<h4><a href="https://dystopiarevista.com/ ">Dystopia</a></h4>
+								<p>Revista digital, portfolio</p>
 							</div>
 						</div>
 					</div>
@@ -448,7 +463,7 @@
 	<!--================End Portfolio Area =================-->
 
 	<!--================ Start Testimonial Area =================-->
-	<div class="testimonial_area section_gap_bottom">
+	{{-- <div class="testimonial_area section_gap_bottom">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-8 text-center">
@@ -542,11 +557,11 @@
         		</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!--================ End Testimonial Area =================-->
 
 	<!--================ Start Newsletter Area =================-->
-	<section class="newsletter_area">
+	{{-- <section class="newsletter_area">
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-12">
@@ -569,7 +584,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> --}}
 	<!--================ End Newsletter Area =================-->
 
 	<!--================Footer Area =================-->
@@ -579,16 +594,12 @@
 				<div class="col-lg-12">
 					<div class="footer_top flex-column">
 						<div class="footer_logo">
-							<a href="#">
-								<img src="img/logo.png" alt="">
-							</a>
-							<h4>Follow Me</h4>
+							<a href="{{url('/')}}"><img src="{{asset('img/logo-lmdev.png')}}" alt=""></a>
+							<h4>Sigueme</h4>
 						</div>
 						<div class="footer_social">
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-dribbble"></i></a>
-							<a href="#"><i class="fa fa-behance"></i></a>
+							<a href="https://www.facebook.com/ldanielm23/" target="_blank"><i class="fa fa-facebook"></i></a>
+							<a href="https://www.instagram.com/luisdanielmanuelmartinez/" target="_blank"><i class="fa fa-instagram"></i></a>
 						</div>
 					</div>
 				</div>
